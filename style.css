@@ -1,10 +1,166 @@
-/* Щоб контент сайту був поверх м'ячів */
-header, nav, main, section, footer, .card, .photo-card {
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #eef4ff, #fff4e6);
+    color: #222;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Щоб контент був поверх м'ячів */
+header, nav, main, footer {
     position: relative;
     z-index: 2;
 }
 
-/* Фон з м'ячами */
+/* Верхній блок */
+header {
+    background: #1e3a8a;
+    color: white;
+    text-align: center;
+    padding: 35px 15px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* Меню */
+nav {
+    background: #ff8c00;
+    text-align: center;
+    padding: 14px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: #1e3a8a;
+}
+
+/* Основна частина */
+main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+/* Блоки */
+.card {
+    background: rgba(255, 255, 255, 0.94);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+    animation: smoothAppear 0.9s ease forwards;
+    transition: 0.35s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+    color: #1e3a8a;
+    margin-top: 0;
+}
+
+.card p,
+.card li {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.card img {
+    width: 100%;
+    max-height: 430px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-top: 15px;
+    transition: 0.35s ease;
+}
+
+.card img:hover {
+    transform: scale(1.02);
+}
+
+/* Галерея */
+.gallery {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.photo-card {
+    background: rgba(255, 255, 255, 0.94);
+    width: 30%;
+    min-width: 250px;
+    padding: 15px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+    animation: smoothAppear 0.9s ease forwards;
+    transition: 0.35s ease;
+}
+
+.photo-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Відео */
+.video-box {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.video-box iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Низ сайту */
+footer {
+    background: #1e3a8a;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: 40px;
+}
+
+/* Фон з баскетбольними м'ячами */
 .balls-bg {
     position: fixed;
     inset: 0;
@@ -13,17 +169,16 @@ header, nav, main, section, footer, .card, .photo-card {
     overflow: hidden;
 }
 
-/* Загальні стилі м'ячів */
 .ball {
     position: absolute;
-    font-size: 38px;
-    opacity: 0.25;
+    font-size: 42px;
+    opacity: 0.22;
     animation-name: ballBounce;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
 }
 
-/* Розташування і швидкість кожного м'яча */
+/* Багато м'ячів по всьому сайту */
 .ball1 {
     left: 5%;
     top: 15%;
@@ -32,35 +187,35 @@ header, nav, main, section, footer, .card, .photo-card {
 }
 
 .ball2 {
-    left: 18%;
-    top: 65%;
+    left: 17%;
+    top: 68%;
     animation-duration: 9s;
     animation-delay: 1s;
 }
 
 .ball3 {
-    left: 32%;
+    left: 31%;
     top: 30%;
     animation-duration: 10s;
     animation-delay: 2s;
 }
 
 .ball4 {
-    left: 48%;
-    top: 75%;
+    left: 45%;
+    top: 78%;
     animation-duration: 8.5s;
     animation-delay: 1.5s;
 }
 
 .ball5 {
-    left: 62%;
-    top: 20%;
+    left: 60%;
+    top: 18%;
     animation-duration: 9.5s;
     animation-delay: 0.5s;
 }
 
 .ball6 {
-    left: 76%;
+    left: 73%;
     top: 55%;
     animation-duration: 11s;
     animation-delay: 2.5s;
@@ -74,42 +229,41 @@ header, nav, main, section, footer, .card, .photo-card {
 }
 
 .ball8 {
-    left: 12%;
+    left: 10%;
     top: 85%;
     animation-duration: 12s;
     animation-delay: 3s;
 }
 
 .ball9 {
-    left: 55%;
+    left: 52%;
     top: 45%;
     animation-duration: 9s;
     animation-delay: 2.2s;
 }
 
 .ball10 {
-    left: 92%;
+    left: 90%;
     top: 82%;
     animation-duration: 11.5s;
     animation-delay: 1.8s;
 }
 
-/* Плавне підстрибування м'ячів */
 @keyframes ballBounce {
     0% {
         transform: translateY(0) translateX(0) rotate(0deg);
     }
 
     25% {
-        transform: translateY(-60px) translateX(25px) rotate(90deg);
+        transform: translateY(-55px) translateX(20px) rotate(90deg);
     }
 
     50% {
-        transform: translateY(0) translateX(50px) rotate(180deg);
+        transform: translateY(0) translateX(40px) rotate(180deg);
     }
 
     75% {
-        transform: translateY(60px) translateX(25px) rotate(270deg);
+        transform: translateY(55px) translateX(20px) rotate(270deg);
     }
 
     100% {
@@ -117,12 +271,7 @@ header, nav, main, section, footer, .card, .photo-card {
     }
 }
 
-/* Плавна поява блоків */
-.card, .photo-card, section, main {
-    animation: smoothAppear 0.9s ease forwards;
-}
-
-/* Ефект появи */
+/* Плавна поява */
 @keyframes smoothAppear {
     0% {
         opacity: 0;
@@ -135,26 +284,23 @@ header, nav, main, section, footer, .card, .photo-card {
     }
 }
 
-/* Плавність переходів для блоків */
-.card, .photo-card, nav a, button, img {
-    transition: all 0.35s ease;
-}
-
-/* Легкий ефект при наведенні на блоки */
-.card:hover, .photo-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
-}
-
-/* Плавність для картинок */
-img:hover {
-    transform: scale(1.03);
-}
-
 /* Адаптація під телефон */
 @media (max-width: 700px) {
+    header h1 {
+        font-size: 28px;
+    }
+
+    nav a {
+        display: block;
+        margin: 8px 0;
+    }
+
+    .photo-card {
+        width: 100%;
+    }
+
     .ball {
         font-size: 30px;
-        opacity: 0.18;
+        opacity: 0.16;
     }
 }
