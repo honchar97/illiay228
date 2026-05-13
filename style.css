@@ -11,13 +11,16 @@ body {
     overflow-x: hidden;
 }
 
-/* Щоб контент був поверх м'ячів */
-header, nav, main, footer {
+/* Контент поверх м'ячів */
+header,
+nav,
+main,
+footer {
     position: relative;
     z-index: 2;
 }
 
-/* Верхній блок */
+/* Шапка сайту */
 header {
     background: #1e3a8a;
     color: white;
@@ -47,12 +50,12 @@ nav a {
     text-decoration: none;
     margin: 0 12px;
     font-weight: bold;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 nav a:hover {
-    text-decoration: underline;
     color: #1e3a8a;
+    text-decoration: underline;
 }
 
 /* Основна частина */
@@ -62,9 +65,9 @@ main {
     padding: 0 15px;
 }
 
-/* Блоки */
+/* Картки / блоки */
 .card {
-    background: rgba(255, 255, 255, 0.94);
+    background: rgba(255, 255, 255, 0.95);
     padding: 25px;
     margin-bottom: 25px;
     border-radius: 16px;
@@ -111,7 +114,7 @@ main {
 }
 
 .photo-card {
-    background: rgba(255, 255, 255, 0.94);
+    background: rgba(255, 255, 255, 0.95);
     width: 30%;
     min-width: 250px;
     padding: 15px;
@@ -134,6 +137,11 @@ main {
     border-radius: 12px;
 }
 
+.photo-card p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
 /* Відео */
 .video-box {
     position: relative;
@@ -151,7 +159,7 @@ main {
     border: 0;
 }
 
-/* Низ сайту */
+/* Футер */
 footer {
     background: #1e3a8a;
     color: white;
@@ -172,13 +180,13 @@ footer {
 .ball {
     position: absolute;
     font-size: 42px;
-    opacity: 0.22;
+    opacity: 0.32;
     animation-name: ballBounce;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
 }
 
-/* Багато м'ячів по всьому сайту */
+/* Розташування 20 м'ячів */
 .ball1 {
     left: 5%;
     top: 15%;
@@ -249,6 +257,77 @@ footer {
     animation-delay: 1.8s;
 }
 
+.ball11 {
+    left: 3%;
+    top: 45%;
+    animation-duration: 10s;
+    animation-delay: 0.8s;
+}
+
+.ball12 {
+    left: 14%;
+    top: 35%;
+    animation-duration: 11s;
+    animation-delay: 2.4s;
+}
+
+.ball13 {
+    left: 24%;
+    top: 10%;
+    animation-duration: 9.5s;
+    animation-delay: 1.6s;
+}
+
+.ball14 {
+    left: 38%;
+    top: 58%;
+    animation-duration: 12s;
+    animation-delay: 3.1s;
+}
+
+.ball15 {
+    left: 47%;
+    top: 12%;
+    animation-duration: 10.5s;
+    animation-delay: 0.4s;
+}
+
+.ball16 {
+    left: 63%;
+    top: 82%;
+    animation-duration: 11.5s;
+    animation-delay: 2.7s;
+}
+
+.ball17 {
+    left: 70%;
+    top: 35%;
+    animation-duration: 9s;
+    animation-delay: 1.3s;
+}
+
+.ball18 {
+    left: 82%;
+    top: 72%;
+    animation-duration: 12.5s;
+    animation-delay: 3.4s;
+}
+
+.ball19 {
+    left: 94%;
+    top: 40%;
+    animation-duration: 10s;
+    animation-delay: 2s;
+}
+
+.ball20 {
+    left: 36%;
+    top: 88%;
+    animation-duration: 13s;
+    animation-delay: 1.1s;
+}
+
+/* Плавний рух м'ячів */
 @keyframes ballBounce {
     0% {
         transform: translateY(0) translateX(0) rotate(0deg);
@@ -271,7 +350,7 @@ footer {
     }
 }
 
-/* Плавна поява */
+/* Плавна поява блоків */
 @keyframes smoothAppear {
     0% {
         opacity: 0;
@@ -290,9 +369,21 @@ footer {
         font-size: 28px;
     }
 
+    header p {
+        font-size: 16px;
+    }
+
     nav a {
         display: block;
         margin: 8px 0;
+    }
+
+    main {
+        margin: 20px auto;
+    }
+
+    .card {
+        padding: 18px;
     }
 
     .photo-card {
@@ -301,6 +392,6 @@ footer {
 
     .ball {
         font-size: 30px;
-        opacity: 0.16;
+        opacity: 0.18;
     }
 }
